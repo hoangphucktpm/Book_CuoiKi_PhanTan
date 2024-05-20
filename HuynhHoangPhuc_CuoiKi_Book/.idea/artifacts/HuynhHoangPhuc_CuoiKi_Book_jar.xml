@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="HuynhHoangPhuc_CuoiKi_Book:jar">
+    <output-path>$PROJECT_DIR$/../HuynhHoangPhuc_CuoiKi_Book_Client/lib</output-path>
+    <root id="archive" name="HuynhHoangPhuc_CuoiKi_Book.jar">
+      <element id="module-output" name="HuynhHoangPhuc_CuoiKi_Book" />
+    </root>
+  </artifact>
+</component>
