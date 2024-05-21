@@ -14,7 +14,7 @@ import java.io.Serializable;
 @Entity
 @Getter
 @Setter
-@ToString
+//@ToString
 @Table(name = "publishers")
 public class Publisher implements Serializable {
 
@@ -37,6 +37,17 @@ public class Publisher implements Serializable {
         this.address = address;
         this.email = email;
         this.phone = phone;
+    }
+
+    @Override
+public String toString() {
+        return "Publisher{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                '}';
     }
 
 

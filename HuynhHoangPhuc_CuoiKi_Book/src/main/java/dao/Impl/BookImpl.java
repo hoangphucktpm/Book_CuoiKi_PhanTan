@@ -26,7 +26,7 @@ public class BookImpl extends UnicastRemoteObject implements BookDao {
     //+ listRatedBooks(author: String, rating: int): List<Book>
 
     public List<Book> listRatedBooks(String author, int rating) throws RemoteException {
-        List<Book> books = em.createQuery("SELECT b FROM Book b JOIN b.reviews r JOIN b.authors a WHERE  r.rating >= :rating and a = :author")
+        List<Book> books = em.createQuery("SELECT b FROM Book b INNER JOIN b.reviews r INNER JOIN b.authors a WHERE r.rating > :rating and a = :author")
                 .setParameter("author", author)
                 .setParameter("rating", rating)
                 .getResultList();

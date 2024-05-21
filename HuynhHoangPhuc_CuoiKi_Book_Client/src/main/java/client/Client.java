@@ -1,10 +1,6 @@
 package client;
 
 
-import dao.BookDao;
-import dao.Impl.BookImpl;
-import dao.Impl.ReviewsImpl;
-import dao.ReviewsDao;
 import entity.Book;
 
 
@@ -38,17 +34,19 @@ public class Client {
                 {
                     case 1:
                         scanner.nextLine();
+                        System.out.println("Liệt kê danh sách các cuốn sách được viết bởi tác giả nào đó khi biết tên tác giả và có điểm đánh giá từ mấy sao trở lên" );
                         System.out.println("Nhập tên tác giả: ");
                         String author = scanner.nextLine();
+                        dos.writeUTF(author);
+
                         System.out.println("Nhập điểm đánh giá: ");
                         int rating = scanner.nextInt();
-                        System.out.println("Kết quả liệt kê danh sách các cuốn sách được viết bởi tác giả nào đó khi biết tên tác giả và có điểm đánh giá từ mấy sao trở lên");
-                        System.out.println("Danh sách các cuốn sách: ");
+                        dos.writeInt(rating);
+                        scanner.nextLine();
+                        dos.flush();
+
                         List<Book> books = (List<Book>) ois.readObject();
                         books.forEach(System.out::println);
-                        dos.writeUTF(author);
-                        dos.writeInt(rating);
-                        dos.flush();
                         break;
                     case 2:
 

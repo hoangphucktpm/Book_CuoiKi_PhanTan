@@ -12,7 +12,7 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
-@ToString
+//@ToString
 @Table(name = "people")
 public class Person implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -42,6 +42,17 @@ public class Person implements Serializable {
         this.firstName = firstName;
         this.email = email;
         this.professionalTitle = professionalTitle;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", lastName='" + lastName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", email='" + email + '\'' +
+                ", professionalTitle='" + professionalTitle + '\'' +
+                '}';
     }
 
 }

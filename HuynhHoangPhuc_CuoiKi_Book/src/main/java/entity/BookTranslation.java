@@ -14,7 +14,7 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
-@ToString
+//@ToString
 @Table(name = "book_translations")
 public class BookTranslation extends Book implements Serializable {
 
@@ -32,5 +32,20 @@ public class BookTranslation extends Book implements Serializable {
         super(ISBN, name, publishYear, numOfPages, price, authors, publisher);
         this.language = language;
         this.translateName = translateName;
+    }
+
+    @Override
+    public String toString() {
+        return "BookTranslation{" +
+                "ISBN='" + ISBN + '\'' +
+                ", name='" + name + '\'' +
+                ", publishYear=" + publishYear +
+                ", numOfPages=" + numOfPages +
+                ", price=" + price +
+                ", authors=" + authors +
+                ", publisher=" + publisher +
+                ", language='" + language + '\'' +
+                ", translateName='" + translateName + '\'' +
+                '}';
     }
 }

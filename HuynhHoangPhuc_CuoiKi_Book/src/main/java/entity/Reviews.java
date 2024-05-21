@@ -11,7 +11,7 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
-@ToString
+//@ToString
 @Table(name = "reviews")
 public class Reviews implements Serializable {
 
@@ -37,6 +37,14 @@ public class Reviews implements Serializable {
     public Reviews(int rating, String comment) {
         this.rating = rating;
         this.comment = comment;
+    }
+
+    @Override
+    public String toString() {
+        return "Reviews{" +
+                "rating=" + rating +
+                ", comment='" + comment + '\'' +
+                '}';
     }
 
 

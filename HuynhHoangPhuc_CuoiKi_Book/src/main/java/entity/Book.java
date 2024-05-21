@@ -11,7 +11,7 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
-@ToString
+//@ToString
 @Table(name = "books")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Book implements Serializable {
@@ -55,6 +55,19 @@ public class Book implements Serializable {
         this.price = price;
         this.authors = authors;
         this.publisher = publisher;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "ISBN='" + ISBN + '\'' +
+                ", name='" + name + '\'' +
+                ", publishYear=" + publishYear +
+                ", numOfPages=" + numOfPages +
+                ", price=" + price +
+                ", authors=" + authors +
+                ", publisher=" + publisher +
+                '}';
     }
 
 

@@ -68,6 +68,7 @@ class ClientHandler implements Runnable {
                         String author = dis.readUTF();
                         int rating = dis.readInt();
                         List<Book> books = bookDao.listRatedBooks(author, rating);
+                        books.forEach(System.out::println);
                         oos.writeObject(books);
                         oos.flush();
                         break;
